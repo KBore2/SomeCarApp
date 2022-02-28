@@ -1,0 +1,21 @@
+version: '3.4'
+
+services:
+  db:
+    image: "mcr.microsoft.com/mssql/server"
+    environment:
+        SA_PASSWORD: "Strong_P@ssword"
+        ACCEPT_EULA: "Y"
+    ports:
+      - "1433:1433"
+
+  somecarapp:
+    depends_on: [db]
+    image: somecarapp
+    build:
+      context: .
+      dockerfile: SomeCarApp/Dockerfile
+    ports:
+      - "80:80"
+    environment:
+        ConnectionStrings__CarDB: "Server=localhost;Database=CarDB;Trusted_Connection=False;User Id=SA;Password=Strong_P@ssword;"
