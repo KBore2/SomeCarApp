@@ -24,7 +24,7 @@ namespace SomeCarApp.Domain.Services
 
         public async Task<List<CarBrand>> GetCarBrands()
         {
-            return await _carBrandRepository.ListAsync(cb => true);
+            return await _carBrandRepository.ListAsync();
         }
     }
 }

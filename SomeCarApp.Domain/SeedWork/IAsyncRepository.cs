@@ -13,5 +13,7 @@ namespace SomeCarApp.Domain.SeedWork
         Task<TEntity> GetAsync(Expression<Func<TEntity, bool>> expression);
 
         Task<List<TEntity>> ListAsync(Expression<Func<TEntity, bool>> expression);
+
+        Task<List<TEntity>> ListAsync();
     }
 }
