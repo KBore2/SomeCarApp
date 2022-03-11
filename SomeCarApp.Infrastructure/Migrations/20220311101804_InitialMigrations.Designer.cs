@@ -9,17 +9,17 @@ using SomeCarApp.Infrastructure;
 
 #nullable disable
 
-namespace SomeCarApp.Migrations
+namespace SomeCarApp.Infrastructure.Migrations
 {
     [DbContext(typeof(CarAppContext))]
-    [Migration("20220228120154_InitialMigration")]
-    partial class InitialMigration
+    [Migration("20220311101804_InitialMigrations")]
+    partial class InitialMigrations
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.2")
+                .HasAnnotation("ProductVersion", "6.0.3")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);

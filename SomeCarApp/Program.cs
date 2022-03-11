@@ -44,7 +44,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 // DB Context
-string migrationAssembly = typeof(Program).GetTypeInfo().Assembly.GetName().Name;
+string migrationAssembly = typeof(CarAppContext).Assembly.GetName().Name;
 string connectionString = builder.Configuration.GetConnectionString("CarsDB");
 
 builder.Services.
