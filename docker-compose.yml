@@ -17,5 +17,6 @@ services:
       dockerfile: SomeCarApp/Dockerfile
     ports:
       - "80:80"
+      - "443:443"
     environment:
-        ConnectionStrings__CarDB: "Server=localhost;Database=CarDB;Trusted_Connection=False;User Id=SA;Password=Strong_P@ssword;"
+        - ConnectionStrings__CarsDB=Server=host.docker.internal,1433;Database=CarDB;Trusted_Connection=False;User Id=SA;Password=Strong_P@ssword;

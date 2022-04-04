@@ -4,9 +4,11 @@ services:
   somecarapp:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - ASPNETCORE_URLS=http://+:80
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=p@ssword
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/aspnetapp.pfx
     ports:
-      - "80"
+      - "80:80"
+      - "443:443"
     volumes:
-      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
-      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+      - ~/.aspnet/https:/https:ro
