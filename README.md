@@ -50,6 +50,14 @@ You can use the following command to start up the service from the root director
  docker-compose up -d
 ```
 
+#### Database Migrations####
+
+Run the Database migrations after configuring the conneciton string to stand up the database schema.
+
+```
+cd .\SomeCarApp\
+dotnet ef database update
+```
 #### Dependencies ####
 
 * Microsoft SQL Server
